@@ -1,72 +1,9 @@
-*{
-  margin: 0px;
-  padding: 0px;
+.number-box {
+    border: 3px solid black;
 }
 
-body{
-  text-align: center;
-  font-weight: bold;
-  background-color: #F6D9F5;
-}
-
-.prompt{
-  display: flex;
-  justify-content: center;
-}
-
-h1{
-  font-size: 75px;
-  margin-top: 100px;
-  margin-bottom: 50px;
-}
-
-h2{
-  font-size: 50px;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-h3{
-  padding-top: 30px;
-}
-
-
-button{
-  margin: 10px;
-  border-radius: 12px;
-
- font-size: 15px;
- font-weight: bold;
- color: black;
-
- padding-top: 10px;
- padding-bottom: 10px;
- padding-left: 20px;
- padding-right: 20px;
-}
-
-#increment-button{
-  background: #54FF49;
-}
-
-
-#decrement-button{
-  background: #4FC8FF;
-}
-
-#save-button{
-  background: #FFF89A;
-}
-
-#clear-button{
-    background: #FF645D;
-}
-
-
-.output{
- display: flex;
- justify-content: center;
- flex-flow: row wrap;
- padding-left: 250px;
- padding-right: 250px;
+.p {
+    text-decoration: wavy purple;
+    text-align: center;
+    font-weight: bold;
 }

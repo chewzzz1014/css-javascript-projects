@@ -1,27 +1,23 @@
-var countEl = document.getElementById("count-el")
-var displayEl = document.getElementById("display-el")
-var count = 0
-var out =""
+const increment = document.querySelector("#increment");
+const decrement = document.querySelector("#decrement");
+const save = document.querySelector("#save");
+const clear = document.querySelector("#clear");
+const displayNumber = document.querySelector("#display-num");
 
-function increment(){
-  count+=1
-  countEl.innerText = count
+
+const result = document.querySelector("#result");
+
+
+function addNumber() {
+  const container = document.createElement("div");
+  const text = document.createElement("p");
+
+  text.innerHTML = "<b>" + displayNumber.value + "</b>";
+
+  container.insertAdjacentElement("beforeend", text);
+  container.classList.toogle("number-box");
+  result.insertAdjacentElement("beforeend", container);
+  displayNumber.textContent = "";
 }
 
-function decrement(){
-  count-=1
-  countEl.innerText = count
-}
-
-function save(){
-  out += count+"       "
-   console.log(displayEl.textContent = out)
-}
-
-
-function clearAll(){
-  countEl.textContent = 0
-  displayEl.innerText = ""
-  out=""
-  count = 0
-}
+save.addEventListener("click", addNumber);
