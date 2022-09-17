@@ -1,0 +1,3 @@
+ - [Assignment](https://www.theodinproject.com/lessons/foundations-rock-paper-scissors) for the Foundations Course of Web Development Path provided by The Odin Project.
+ - Created a simple Rock Paper Scissors game using JavaScript.
+ - GUI to be added soon...
