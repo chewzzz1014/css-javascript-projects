@@ -1,9 +1,10 @@
 .number-box {
-    border: 3px solid black;
+    border: 1px solid black;
+    padding: 1rem;
 }
 
-.p {
-    text-decoration: wavy purple;
+p {
+    text-decoration: underline wavy purple;
     text-align: center;
     font-weight: bold;
 }
