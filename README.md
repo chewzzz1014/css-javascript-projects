@@ -25,22 +25,18 @@
    - :white_check_mark: Responsive
    - Post tweet based on what user inputted.
 
-5. landing_page
-   - :x: Responsive
-   - Use flex properties and simple CSS techniques to build a landing page which includes several sections as well as a header and a footer.
-   - One of the assignments in [theodinproject](https://www.theodinproject.com/lessons/foundations-landing-page)'s Web Development learning path.
 
-6. museum_of_candy
+5. museum_of_candy
    - :white_check_mark: Bootstrap
    - :white_check_mark: Responsive
    - Asthetic responsive website. 
    - Follow-along project.
 
-7. photosite
+6. photosite
    - :white_check_mark: Responsive
    - Responsive photo viewer built using CSS flex box.
 
-8. pokemon_icon
+7. pokemon_icon
    - :white_check_mark: Bootstrap
    - :white_check_mark: Responsive
    - Adding 100 pokemon icons using Javascript DOM.
@@ -51,7 +47,20 @@
    - A responsive pricing panel clones.
    - Follow-along project.
 
-9. rock_paper_scissors (Incomplete)
+9. real_time_update
+   - Real time update the h1 text's content with input user have enterred
+
+
+10. rock_paper_scissors (Incomplete)
    - :x: Responsive
    - Created a simple Rock Paper Scissors game using JavaScript.
 
+11. top_landing_page
+   - :x: Responsive
+   - Use flex properties and simple CSS techniques to build a landing page which includes several sections as well as a header and a footer.
+   - One of the assignments in [theodinproject](https://www.theodinproject.com/lessons/foundations-landing-page)'s Web Development learning path.
+
+
+12. top_recipe
+    - :x: Responsive
+    - Solution of [task](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/recipes) in [HTML Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations#html-foundations) under [Web Development Courses](https://www.theodinproject.com/paths/foundations/courses/foundations) provided by [The Odin Project](https://www.theodinproject.com/). A recipe website is built using basic HTML and CSS skills.
