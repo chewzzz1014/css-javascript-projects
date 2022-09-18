@@ -51,7 +51,7 @@
    - A responsive pricing panel clones.
    - Follow-along project.
 
-9. rock_paper_scissors
+9. rock_paper_scissors (Incomplete)
    - :x: Responsive
    - Created a simple Rock Paper Scissors game using JavaScript.
 
