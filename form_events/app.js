@@ -17,8 +17,8 @@ tweetForm.addEventListener('submit', function (e) {
 const addTweet = (username, tweet) => {
     const smallContainer = document.createElement("div");
     smallContainer.classList.add("singleTweet");
-    smallContainer.classList.add("col");
-    //smallContainer.classList.add("col-md-6");
+    smallContainer.classList.add("col-12");
+    smallContainer.classList.add("col-md-6");
 
     // username
     const userNameP = document.createElement("p");
@@ -33,6 +33,7 @@ const addTweet = (username, tweet) => {
 
     // user tweet
     const tweetP = document.createElement("p");
+    tweetP.classList.add("text-wrap");
     tweetP.append(tweet);
     smallContainer.insertAdjacentElement("beforeend", tweetP);
 

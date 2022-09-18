@@ -17,15 +17,17 @@
         <form action="/dogs" id="tweetForm">
             <div class="row mt-3">
 
-                <div class="col-12 col-md-6 my-md-5">
+                <div class="col-12 col-md-6 my-3 my-md-5">
                     <label for="username" class="form-label">Username<span class="text-danger">*</span></label>
                     <input type="text" name="username" placeholder="username" id="username" class="form-control"
-                        required>
+                        maxlength="30" required>
+                    <small class="form-text text-secondary">Max 30 characters</small>
                 </div>
 
-                <div class="col-12 col-md-6 my-md-5">
+                <div class="col-12 col-md-6 my-3 my-md-5">
                     <label for="tweet" class="form-label">Tweet<span class="text-danger">*</span></label>
-                    <input type="text" name="tweet" placeholder="tweet" id="tweet" class="form-control" required>
+                    <input type="text" name="tweet" placeholder="tweet" id="tweet" class="form-control" maxlength="150"
+                        required><small class="form-text ">Max 150 characters</small>
                 </div>
 
             </div>
@@ -36,10 +38,10 @@
             <div class="col-12">
                 <h2 class="text-center">Tweets:</h2>
             </div>
+        </div>
 
-            <div class="row" id="tweets">
+        <div class="row" id="tweets">
 
-            </div>
         </div>
 
     </section>
