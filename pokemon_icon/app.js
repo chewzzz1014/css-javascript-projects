@@ -12,6 +12,9 @@ for (let i = 1; i <= 151; i++) {
     const newImg = document.createElement('img');
     newImg.src = `${baseURL}${i}.png`
 
+    pokemon.classList.add("col-6");
+    pokemon.classList.add("col-md-4");
+    pokemon.classList.add("col-xl-3");
 
     pokemon.insertAdjacentElement("beforeend", newImg);
     pokemon.insertAdjacentElement("beforeend", label);
