@@ -56,12 +56,18 @@
     - :x: Responsive
     - Created a simple Rock Paper Scissors game using JavaScript.
 
-11. top_landing_page
+11. score_keeper
+    - :white_check_mark: Bulma Framework
+    - :white_check_mark: Responsive
+    - Create a interactive scoreboard to keep track of players' scores.
+    - Code along project
+
+12. top_landing_page
     - :x: Responsive
     - Use flex properties and simple CSS techniques to build a landing page which includes several sections as well as a header and a footer.
     - One of the assignments in [theodinproject](https://www.theodinproject.com/lessons/foundations-landing-page)'s Web Development learning path.
 
 
-12. top_recipe
+13. top_recipe
     - :x: Responsive
     - Solution of [task](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/recipes) in [HTML Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations#html-foundations) under [Web Development Courses](https://www.theodinproject.com/paths/foundations/courses/foundations) provided by [The Odin Project](https://www.theodinproject.com/). A recipe website is built using basic HTML and CSS skills.
