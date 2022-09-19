@@ -30,11 +30,12 @@
    - :white_check_mark: Bootstrap
    - :white_check_mark: Responsive
    - Asthetic responsive website. 
-   - Follow-along project.
+   - Code along project.
 
 6. photosite
    - :white_check_mark: Responsive
    - Responsive photo viewer built using CSS flex box.
+   - Code Along Project.
 
 7. pokemon_icon
    - :white_check_mark: Bootstrap
