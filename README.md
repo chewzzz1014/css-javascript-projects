@@ -52,13 +52,13 @@
 
 
 10. rock_paper_scissors (Incomplete)
-   - :x: Responsive
-   - Created a simple Rock Paper Scissors game using JavaScript.
+    - :x: Responsive
+    - Created a simple Rock Paper Scissors game using JavaScript.
 
 11. top_landing_page
-   - :x: Responsive
-   - Use flex properties and simple CSS techniques to build a landing page which includes several sections as well as a header and a footer.
-   - One of the assignments in [theodinproject](https://www.theodinproject.com/lessons/foundations-landing-page)'s Web Development learning path.
+    - :x: Responsive
+    - Use flex properties and simple CSS techniques to build a landing page which includes several sections as well as a header and a footer.
+    - One of the assignments in [theodinproject](https://www.theodinproject.com/lessons/foundations-landing-page)'s Web Development learning path.
 
 
 12. top_recipe
