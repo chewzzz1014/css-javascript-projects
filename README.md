@@ -25,6 +25,8 @@
    - :white_check_mark: Responsive
    - Post tweet based on what user inputted.
 
+4. jokes_api
+   - Display jokes fetched using API.
 
 5. museum_of_candy
    - :white_check_mark: Bootstrap
@@ -71,3 +73,7 @@
 13. top_recipe
     - :x: Responsive
     - Solution of [task](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/recipes) in [HTML Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations#html-foundations) under [Web Development Courses](https://www.theodinproject.com/paths/foundations/courses/foundations) provided by [The Odin Project](https://www.theodinproject.com/). A recipe website is built using basic HTML and CSS skills.
+
+
+14. tv_Show_api
+    - Get tv show's poster based on what user have submitted using form.
