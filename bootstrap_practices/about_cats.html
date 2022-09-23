@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- for icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <style>
+        h2 {
+            font-family: Lobster, Monospace;
+        }
+
+        .thick-green-border {
+            border-color: green;
+            border-width: 10px;
+            border-style: solid;
+            border-radius: 50%;
+        }
+    </style>
+    <title>Bootstrap Practises</title>
+</head>
+
+<body>
+
+    <!-- make container responsive and occupt the whole screen -->
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-xs-8">
+                <!-- make primary text align to center -->
+                <h2 class="text-primary text-center">CatPhotoApp</h2>
+            </div>
+            <div class="col-xs-4">
+                <a href="#"><img class="img-responsive thick-green-border"
+                        src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+                        alt="A cute orange cat lying on its back."></a>
+            </div>
+        </div>
+
+
+
+        <!-- make image responsive -->
+        <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" alt="" class="img-responsive">
+
+
+        <!-- Bootstrap grid: 3 buttons in one row when width >= xs -->
+        <div class="row">
+            <div class="col-xs-4">
+                <!-- bootstrap responsive button that stretch the entire page's width -->
+
+                <!-- Inline icon -->
+                <button class="btn btn-primary btn-block">
+                    <span class="fas fa-thumbs-up"></span>
+                    Like
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <!-- Bootstrap's info button -->
+                <button class="btn btn-info btn-block">
+                    <span class="fas fa-info-circle"></span>
+                    Info
+                </button>
+            </div>
+            <div class="col-xs-4">
+                <!-- Bootstrap's danger button -->
+                <button class="btn btn-danger btn-block">
+                    <span class="fas fa-trash"></span>
+                    Delete
+                </button>
+            </div>
+        </div>
+
+
+
+
+        <!-- Bootstrap's text styling -->
+        <p>Things cats <span class="text-danger">love:</span></p>
+        <ul>
+            <li>cat nip</li>
+            <li>laser pointers</li>
+            <li>lasagna</li>
+        </ul>
+        <p>Top 3 things cats hate:</p>
+        <ol>
+            <li>flea treatment</li>
+            <li>thunder</li>
+            <li>other cats</li>
+        </ol>
+
+
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+                </div>
+                <div class="col-xs-6">
+                    <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4">
+                    <label><input type="checkbox" name="personality"> Loving</label>
+                </div>
+                <div class="col-xs-4">
+                    <label><input type="checkbox" name="personality"> Lazy</label>
+                </div>
+                <div class="col-xs-4">
+                    <label><input type="checkbox" name="personality"> Crazy</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-7">
+                    <input class="form-control" type="text" placeholder="cat photo URL" required>
+                </div>
+
+                <div class="col-xs-5">
+                    <button type="submit" class="btn btn-primary">Submit
+                        <i class="fa fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+
+    </div>
+</body>
+
+</html>
