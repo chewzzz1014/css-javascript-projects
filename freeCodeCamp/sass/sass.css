@@ -1,9 +1,55 @@
+#awesome {
+  border-radius: 15px;
+}
+
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+
+.text-6 {
+  font-size: 90px;
+}
+
 .header {
   text-align: center;
 }
 
-.blog-post,
-h2 {
+.header .blog-post,
+.header h2 {
   color: red;
+}
+
+.header .blog-post p,
+.header h2 p {
+  font-size: 20px;
+}
+
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+}
+
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border: 3px solid black;
 }
 /*# sourceMappingURL=sass.css.map */

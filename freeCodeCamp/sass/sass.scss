@@ -1,10 +1,73 @@
+// css variables
 $text-color: red;
 
-.header {
-    text-align: center;
+// mixin (CSS declarations that can be reused throughout the style sheet.)
+//  Mixins are like functions for CSS.
+// syntax: @mixin custom-name (parameter: optional)
+// mixin is called with @include directive
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
 }
 
-.blog-post,
-h2 {
-    color: red;
+// call mixin
+#awesome {
+    @include border-radius(15px);
+}
+
+// if-else
+@mixin border-stroke($val) {
+    @if $val ==light {
+        border: 1px solid black;
+    }
+
+    @else if $val ==medium {
+        border: 3px solid black;
+    }
+
+    @else if $val ==heavy {
+        border: 6px solid black;
+    }
+
+    @else {
+        border: none;
+    }
+}
+
+// loop syntax: for var from start through end (start is inclusive, end is exclusive)
+// #{$i} for subtituing with loop counter
+@for $i from 1 through 6 {
+    .text-#{$i} {
+        font-size: 15px * $i;
+    }
+}
+
+// nesting
+.header {
+    text-align: center;
+
+    .blog-post,
+    h2 {
+        color: $text-color;
+
+        p {
+            font-size: 20px;
+        }
+    }
+}
+
+
+#awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+}
+
+#box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
 }
