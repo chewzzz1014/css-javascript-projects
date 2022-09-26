@@ -112,6 +112,17 @@
   font-size: 20px;
 }
 
+.panel, .big-panel {
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+
+.big-panel {
+  width: 150px;
+  font-size: 2em;
+}
+
 #awesome {
   width: 150px;
   height: 150px;

@@ -93,6 +93,20 @@ $value in $colors {
 }
 
 
+// extend: reuse the rules written for one element,
+.panel {
+    background-color: red;
+    height: 70px;
+    border: 2px solid green;
+}
+
+.big-panel {
+    @extend .panel;
+    width: 150px;
+    font-size: 2em;
+}
+
+
 #awesome {
     width: 150px;
     height: 150px;
