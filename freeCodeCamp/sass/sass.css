@@ -2,6 +2,54 @@
   border-radius: 15px;
 }
 
+.col-1 {
+  width: 50%;
+}
+
+.col-2 {
+  width: 100%;
+}
+
+.col-3 {
+  width: 150%;
+}
+
+.col-4 {
+  width: 200%;
+}
+
+.col-5 {
+  width: 250%;
+}
+
+.col-6 {
+  width: 300%;
+}
+
+.col-7 {
+  width: 350%;
+}
+
+.col-8 {
+  width: 400%;
+}
+
+.col-9 {
+  width: 450%;
+}
+
+.col-10 {
+  width: 500%;
+}
+
+.col-11 {
+  width: 550%;
+}
+
+.col-12 {
+  width: 600%;
+}
+
 .text-1 {
   font-size: 15px;
 }
@@ -24,6 +72,30 @@
 
 .text-6 {
   font-size: 90px;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
 }
 
 .header {
