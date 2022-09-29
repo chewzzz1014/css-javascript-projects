@@ -59,9 +59,7 @@ const TypesOfFruit = () => {
 const Fruits = () => {
   return (
     <div>
-      { /* Change code below this line */}
       <TypesOfFruit />
-      { /* Change code above this line */}
     </div>
   );
 };
@@ -97,15 +95,14 @@ reportWebVitals();
 
 
 /////////////////////////////////////////////////////////
-// Pass Props to Stateless Functional Component (CurrentDate in this case)
+// Pass Props to Stateless Functional Component  (CurrentDate in this case) which's passed from Stateless Component (Calender)
 /////////////////////////////////////////////////////////
 
 const CurrentDate = (props) => {
   return (
     <div>
-      { /* Change code below this line */}
+      {/* put value within {} */}
       <p>The current date is: {props.date} </p>
-      { /* Change code above this line */}
     </div>
   );
 };
@@ -118,13 +115,160 @@ class Calendar extends React.Component {
     return (
       <div>
         <h3>What date is it?</h3>
-        { /* Change code below this line */}
         <CurrentDate date={Date()} />
-        { /* Change code above this line */}
       </div>
     );
   }
 };
 
 // default props
-CurrentDate.defaultProps = { date: 13 };
+CurrentDate.defaultProps = { date: Date(2002, 10, 14) };
+// type-checking of props received
+// CurrentDate.propTypes = { date: PropTypes.date.isRequired };
+
+
+
+/////////////////////////////////////////////////////////
+// Stateful Component
+/////////////////////////////////////////////////////////
+
+// create state in React component by declaring state property in constructor
+// can update it, render it in your UI, and pass it as props to child components. The state object can be as complex or as simple as you need it to be.
+
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "zzz",
+    }
+    // or 
+    this.setState({
+      lastName: "chew"
+    });
+
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.firstName}</h1>
+      </div>
+    );
+  }
+};
+
+////////////////////////////////////////////////////////
+// setState when click button
+/////////////////////////////////////////////////////////
+
+class MyComponent2 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: "Hello"
+    };
+    // bind handleClick's this to MyComponent's this
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    this.setState({
+      text: "You clicked!"
+    });
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick}>Click Me</button>
+        <h1>{this.state.text}</h1>
+      </div>
+    );
+  }
+};
+
+
+
+////////////////////////////////////////////////////////
+// setState when click button using the previous state value
+/////////////////////////////////////////////////////////
+
+class MyComponent3 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visibility: false,
+    };
+    // Change code below this line
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+    // Change code above this line
+  }
+  // Change code below this line
+  toggleVisibility() {
+    this.setState(state => {
+      return { visibility: (state.visibility) ? false : true }
+    });
+  }
+  // Change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////
+// setState when click button using the previous state value
+/////////////////////////////////////////////////////////
+
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // Change code below this line
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+    this.reset = this.reset.bind(this);
+    // Change code above this line
+  }
+  // Change code below this line
+  increment() {
+    this.setState(state => {
+      return { count: state.count + 1 }
+    });
+  }
+
+  decrement() {
+    this.setState(state => {
+      return { count: state.count - 1 }
+    });
+  }
+
+  reset() {
+    this.setState({
+      count: 0,
+    });
+  }
+  // Change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
