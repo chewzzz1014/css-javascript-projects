@@ -266,3 +266,146 @@ class MyForm extends React.Component {
     );
   }
 }
+
+
+
+////////////////////////////////////////////////////////
+// pass callback as prop
+/////////////////////////////////////////////////////////
+
+class MyApp extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render() {
+    let prop = {
+      input: this.state.inputValue,
+      handleChange: this.handleChange
+    }
+    return (
+      <div>
+        { /* Change code below this line */}
+        <GetInput {...prop} />
+        <RenderInput input={this.state.inputValue} />
+        { /* Change code above this line */}
+      </div>
+    );
+  }
+};
+
+class GetInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Get Input:</h3>
+        <input
+          value={this.props.input}
+          onChange={this.props.handleChange} />
+      </div>
+    );
+  }
+};
+
+class RenderInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Input Render:</h3>
+        <p>{this.props.input}</p>
+      </div>
+    );
+  }
+};
+
+
+
+////////////////////////////////////////////////////////
+// componentDidMount
+// render -> execute componentDidMount -> activeUsers was changed -> render again
+/////////////////////////////////////////////////////////
+
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeUsers: null
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 3000);
+  }
+  render() {
+    return (
+      <div>
+        {/* Change code below this line */}
+        <h1>Active Users: {this.state.activeUsers}</h1>
+        {/* Change code above this line */}
+      </div>
+    );
+  }
+}
+
+
+///////////////////////////////////////////////////////
+// shouldComponentUpdate: return true/false to determine whether to update the component or not
+/////////////////////////////////////////////////////////
+
+class OnlyEvens extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('Should I update?');
+    // Change code below this line
+    return nextProps.value % 2 === 0;
+    // Change code above this line
+  }
+  componentDidUpdate() {
+    console.log('Component re-rendered.');
+  }
+  render() {
+    return <h1>{this.props.value}</h1>;
+  }
+}
+
+class Controller extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 0
+    };
+    this.addValue = this.addValue.bind(this);
+  }
+  addValue() {
+    this.setState(state => ({
+      value: state.value + 1
+    }));
+  }
+  render() {
+    return (
+      <div>
+        <button onClick={this.addValue}>Add</button>
+        <OnlyEvens value={this.state.value} />
+      </div>
+    );
+  }
+}
