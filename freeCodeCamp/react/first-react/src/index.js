@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 let JSX = (
   <div className="myDiv">
     {/* This is a comment */}
-    <h1>This is a H1</h1>
+    <h1 >This is a H1</h1>
     <hr />
     <p>P</p>
     <ul>
@@ -72,7 +72,7 @@ class TypesOfFood extends React.Component {
   render() {
     return (
       <div>
-        <h1>Types of Food:</h1>
+        <h1 style={{ color: "red", fontSize: 72 }}>Types of Food:</h1>
         { /* Change code below this line */}
         <Fruits />
         { /* Change code above this line */}
@@ -339,7 +339,7 @@ class RenderInput extends React.Component {
 // render -> execute componentDidMount -> activeUsers was changed -> render again
 /////////////////////////////////////////////////////////
 
-class MyComponent extends React.Component {
+class MyComponent4 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
