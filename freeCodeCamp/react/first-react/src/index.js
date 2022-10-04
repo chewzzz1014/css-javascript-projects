@@ -72,6 +72,7 @@ class TypesOfFood extends React.Component {
   render() {
     return (
       <div>
+        {/* px by default, if specigy the unit wrap them around "" */}
         <h1 style={{ color: "red", fontSize: 72 }}>Types of Food:</h1>
         { /* Change code below this line */}
         <Fruits />
