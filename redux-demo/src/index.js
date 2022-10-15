@@ -3,13 +3,56 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+// store: to keep all the states
+// action: describes what we want to do
+// reducer: describes how action transform the state
+// dispatch: execute action
+
+
+
+
+// action
+const increment = () => {
+  return {
+    type: "INCREMENT",
+
+  }
+}
+
+const decrement = () => {
+  return {
+    type: "DECREMENT",
+
+  }
+}
+
+// reducer
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+  }
+}
+
+// store
+let store = createStore(counter);
+
+// describe store
+store.subscribe(() => console.log(store.getState()));
+
+// dispatch action
+store.dispatch(increment());
+
+
+ReactDOM.render(
+  <App />, document.getElementById("root")
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
