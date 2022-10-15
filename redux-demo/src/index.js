@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
+import { }
 
 // store: to keep all the states
 // action: describes what we want to do
@@ -13,40 +14,42 @@ import { createStore } from 'redux';
 
 
 
-// action
-const increment = () => {
-  return {
-    type: "INCREMENT",
+// // action
+// const increment = () => {
+//   return {
+//     type: "INCREMENT",
 
-  }
-}
+//   }
+// }
 
-const decrement = () => {
-  return {
-    type: "DECREMENT",
+// const decrement = () => {
+//   return {
+//     type: "DECREMENT",
 
-  }
-}
+//   }
+// }
 
-// reducer
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1;
-    case 'DECREMENT':
-      return state - 1;
-  }
-}
+// // reducer
+// const counter = (state = 0, action) => {
+//   switch (action.type) {
+//     case 'INCREMENT':
+//       return state + 1;
+//     case 'DECREMENT':
+//       return state - 1;
+//   }
+// }
 
-// store
-let store = createStore(counter);
+// // store
+// let store = createStore(counter);
 
-// describe store
-store.subscribe(() => console.log(store.getState()));
+// // describe store
+// store.subscribe(() => console.log(store.getState()));
 
-// dispatch action
-store.dispatch(increment());
+// // dispatch action
+// store.dispatch(increment());
 
+
+const store = createStore
 
 ReactDOM.render(
   <App />, document.getElementById("root")
