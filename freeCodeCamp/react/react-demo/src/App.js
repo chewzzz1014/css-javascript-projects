@@ -26,6 +26,7 @@ function App() {
     { name: "mmmum", msg: "react tweet" },
     { name: "mommyBoi", msg: "heyyyyyy mate nice to meet you" },
     { name: "monster", msg: "yoyoyyyyyy" },
+    { name: "maggiLover", msg: "I'm hungry......" },
   ]);
 
 
