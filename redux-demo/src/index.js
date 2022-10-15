@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
-import { }
+import allReducers from './reducers';
+import { Provider, provider } from 'react-redux';
 
 // store: to keep all the states
 // action: describes what we want to do
@@ -49,10 +50,14 @@ import { }
 // store.dispatch(increment());
 
 
-const store = createStore
+// 2 reducers combined
+const store = createStore(allReducers);
 
 ReactDOM.render(
-  <App />, document.getElementById("root")
+  <Provider store={store}>
+    <App />
+  </Provider>
+  , document.getElementById("root")
 );
 
 
