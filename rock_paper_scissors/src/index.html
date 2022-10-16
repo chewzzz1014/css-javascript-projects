@@ -2,43 +2,94 @@
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel = "stylesheet" href = "style.css">
-    <title>Rock Paper Scissors</title>
-  </head>
-  <body>
 
-    <div class="scoreboard">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row scoreboard">
       <div style="text-align: center; font-size: 25px;">
         Player Score:
       </div>
-        <div class="score">
-          0
+      <div class="score">
+        0
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="card" style="width: 18rem;">
+        <img src="../media/fist.png" class="card-img-top" alt="rock">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <img src="../media/open-hand.png" class="card-img-top" alt="rock">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
+      <div class="card" style="width: 18rem;">
+        <img src="../media/scissor.png" class="card-img-top" alt="rock">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+
     </div>
 
-    <div class="center-wrapper">
 
-    <div class="buttons">
-      <a href="#" class="rock">
-       <img src="https://cdn.jsdelivr.net/gh/chewzzz1014/file/fist.png" alt="rock" class="img-rock">
-     </a>
-
-<a href="#" class="paper">
-<img src="https://cdn.jsdelivr.net/gh/chewzzz1014/file/open-hand.png" alt="paper" class="img-paper">
-</a>
-
-<a href="#" class="scissors">
- <img src="https://cdn.jsdelivr.net/gh/chewzzz1014/file/scissor.png" alt="scissors" class="img-scissors">
-</a>
-
-    </div>
-
-    <div class="result">
-        Result
+    <div class="row result">
+      Result
     </div>
   </div>
-    <script src = "script.js"></script>
-  </body>
+
+
+
+
+  <div class="result">
+    Result
+  </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
