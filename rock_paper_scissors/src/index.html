@@ -16,48 +16,33 @@
   <div class="container">
 
     <div class="row scoreboard">
-      <div style="text-align: center; font-size: 25px;">
-        Player Score:
-      </div>
-      <div class="score">
-        0
-      </div>
+      <h1 class="text-center">
+        Player Score: <span class="score">0</span>
+      </h1>
     </div>
 
 
-    <div class="row">
+    <div class="row d-flex justify-content-md-center my-3 my-md-5">
 
-      <div class="card" style="width: 18rem;">
+      <div class="card col-md-3 mx-2" style="width: 18rem;">
         <img src="../media/fist.png" class="card-img-top" alt="rock">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary col py-3 rock-btn"><span class="h3">Rock</span></a>
         </div>
       </div>
 
-      <div class="card" style="width: 18rem;">
+      <div class="card col-md-3 mx-2" style="width: 18rem;">
         <img src="../media/open-hand.png" class="card-img-top" alt="rock">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary col py-3 paper-btn"><span class="h3">Paper</span></a>
         </div>
       </div>
 
 
-      <div class="card" style="width: 18rem;">
+      <div class="card col-md-3 mx-2" style="width: 18rem;">
         <img src="../media/scissor.png" class="card-img-top" alt="rock">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary col py-3 scissors-btn"><span class="h3">Scissors</span></a>
         </div>
       </div>
 
@@ -68,29 +53,17 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Round</th>
+          <th scope="col">Player Score</th>
+          <th scope="col">Computer Score</th>
+          <th scope="col">Result</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table-body">
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
+          <th scope="row" class="round">1</th>
+          <td class="col-player-status">Mark</td>
+          <td class="col-computer-status">Otto</td>
         </tr>
       </tbody>
     </table>
@@ -98,11 +71,6 @@
   </div>
 
 
-
-
-  <div class="result">
-    Result
-  </div>
   </div>
   <script src="script.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

@@ -1,102 +1,122 @@
 "use strict"
 
-// click on button for entering playerSelection
-// display result after each round
-// display running score and announce winner once any player got 5 points
+const btns = document.querySelectorAll(".btn");
+const table = document.querySelector(".table-body");
 
-let playerScore = 0, computerScore=0, winner;
-let playerSelection, computerSelection;
-///////////////////////////////////////////
-let buttons = document.body.querySelector(".buttons");
-buttons.onclick = function(event){
-  let option = event.target.closest("a");
-  switch(option.className){
-    case "rock":
-        playerSelection = 0;
-        break;
-    case "paper":
-        playerSelection = 1;
-        break;
-    case "scissors":
-        playerSelection= 2;
-        break;
-  }
-  alert(playerSelection);
-  document.body.querySelector(".result").innerHTML = playGame(playerSelection);
-  alert(playerSelection);
-  document.body.querySelector(".score").innerHTML = getPlayerScore();
+let isGameOver = false;
+const maxAttempts = 5;
+let attempt = 0;
+
+const scores = {
+  player: 0,
+  computer: 0
+};
+
+const choices = [
+  { rock: 0 },
+  { paper: 1 },
+  { scissors: 2 }
+];
+
+const display = {
+  player: document.querySelector(".score"),
+  computer: scores.computer
 }
 
-//////////////////////////////////////////////
+btns[0].addEventListener("click", (e) => {
+  console.log("Rock!");
+  playGame(0);
+})
 
-function playGame(playerSelection){
-//  if (playerScore<5 && computerScore<5){
-    return printResultPerRound();
-  //  printFinalWinner();
-//  }
+btns[1].addEventListener("click", (e) => {
+  console.log("Paper!");
+  playGame(1);
+})
+
+btns[2].addEventListener("click", (e) => {
+  console.log("Scissors!");
+  playGame(2);
+})
+
+function generateComputerChoice() {
+  return Math.floor(Math.random() * 3);
 }
 
-function getPlayerScore(){
-  return playerScore;
-}
-/////////////////////////////////////////////
+function playGame(playerChoice, computerChoice = generateComputerChoice()) {
 
-function printResultPerRound(playerSelection){
-  computerSelection = getChoice();
-  playerSelection = getChoice(playerSelection);
-  return `You: ${playerSelection}\nComputer: ${computerSelection}\n${playRound(playerSelection, computerSelection)}`;
-}
+  // console.log(`Computer choice: ${computerChoice}`)
 
-function getChoice(n=Math.floor(Math.random() *(2-0+1))){
-  // return Rock / Paper / Scissors
-  let output = ["Rock", "Paper", "Scissors"];
-  return output[n];
-}
-
-function playRound(playerSelection, computerSelection){
-
-  /*
-  Scenarios:
-       - Rock beat Scissors
-       - Paper beats Rock
-       - Scissors beats Paper
-       - Draw
-  Desired output:
-        - playerSelection [win/lose]! [] beats []
-  */
-  if ( (playerSelection == "Rock" && computerSelection == "Scissors")
-  || (playerSelection == "Paper" &&  computerSelection == "Rock")
-  || (playerSelection == "Scissors" && computerSelection == "Paper") )
-  {
-    increasePlayerScore();
-    return `You win! ${playerSelection} beats ${computerSelection.toLowerCase()}`;
-  }
-
-  else if (playerSelection == computerSelection){
-      return `Draw! You choose ${playerSelection.toLowerCase()} and computer choose ${computerSelection.toLowerCase()}`;
-  }
-
-  else{
-    increaseComputerScore();
-    return `You lose! ${computerSelection} beats ${playerSelection.toLowerCase()}`;
+  if (!isGameOver) {
+    console.log(attempt)
+    // draw
+    if (playerChoice == computerChoice) {
+      attempt++;
+      addTableColumn("Draw");
+    }
+    // player wins
+    else if ((playerChoice == 0 && computerChoice == 2) || (playerChoice == 1 && computerChoice == 0) || (playerChoice == 2 && computerChoice == 1)) {
+      scores.player += 1;
+      attempt++;
+      updateScoreDisplay();
+      addTableColumn("Player Wins");
+    }
+    // computer wins
+    else {
+      scores.computer += 1;
+      attempt++;
+      updateScoreDisplay();
+      addTableColumn("Computer Wins");
+    }
+    checkIsGameOver();
   }
 
 }
 
-function increasePlayerScore(){
-    return ++playerScore;
+function checkIsGameOver() {
+  if (attempt == (maxAttempts - 1)) {
+    isGameOver = true;
+    if (scores.player > scores.computer) {
+      display.player.innerHTML += " - <span class='text-success'>Player wins the Game!</span>"
+    } else if (scores.player < scores.computer) {
+      display.player.innerHTML += " - <span class='text-danger'>Computer wins the Game :(</span>"
+    } else {
+      display.player.innerHTML += " - <span class='text-warning'>Draw!</span>"
+    }
+  }
 }
 
-function increaseComputerScore(){
-  return ++computerScore;
+function isLastRound() {
+  if (attempt === (maxAttempts - 1)) {
+    btns.forEach((btn) => btn.setAttribute("disabled", ""));
+    return true;
+  }
+  return false;
 }
 
-function printFinalWinner(){
-  if(playerScore > computerScore)
-      winner = "You";
-  else if (computerScore>playerScore)
-      winner = "Computer"
-  else
-      return `Draw! Your score is ${playerScore} and computer score is ${computerScore}. Nobody wins and ${5-computerScore-playerScore} rounds draw.`;
-  return `${winner} wins. Your score is ${playerScore} and computer score is ${computerScore}. ${5-computerScore-playerScore} rounds draw.`;
+function addTableColumn(result) {
+  const tr = document.createElement("TR");
+  const th = document.createElement("TD");
+  const td1 = document.createElement("TD");
+  const td2 = document.createElement("TD");
+  const td3 = document.createElement("TD");
+
+  th.textContent = attempt;
+  td1.textContent = scores.player;
+  td2.textContent = scores.computer;
+  td3.textContent = result;
+
+  if (isLastRound()) {
+    tr.classList.add("table-danger");
+  }
+
+  tr.insertAdjacentElement("beforeend", th);
+  tr.insertAdjacentElement("beforeend", td1);
+  tr.insertAdjacentElement("beforeend", td2);
+  tr.insertAdjacentElement("beforeend", td3);
+  table.insertAdjacentElement("beforeend", tr);
 }
+
+function updateScoreDisplay() {
+  display.player.textContent = scores.player;
+}
+
