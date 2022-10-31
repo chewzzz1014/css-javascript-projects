@@ -1,5 +1,5 @@
 const canvas = document.querySelector("#canvas");
-// const nodes = document.querySelectorAll(".grid-item");
+const btnDraw = document.querySelector(".btn-draw");
 const btnClear = document.querySelector(".btn-clear");
 const btnEraser = document.querySelector(".btn-eraser");
 const btnRainbow = document.querySelector(".btn-rainbow");
@@ -8,7 +8,7 @@ const btnSmall = document.querySelector(".btn-small");
 const btnMedium = document.querySelector(".btn-medium");
 const btnLarge = document.querySelector(".btn-large");
 
-let currentStatus = 'RANDOM';
+let currentStatus = 'RANDOM', currentSize = 'MEDIUM';
 
 const size = {
     small: {
@@ -38,7 +38,6 @@ function addNodesEvent() {
 
     const addEvent = optionChanged;
     addEvent(nodes);
-
 }
 
 function optionChanged() {
@@ -114,8 +113,20 @@ function getRainbowColor() {
     return colors[Math.floor(Math.random() * 7)];
 }
 
+function randomDraw() {
+    let isFill;
+    let nodes = document.querySelectorAll(".grid-item");
+    Array.from(nodes).forEach((ele) => {
+        isFill = Math.floor(Math.random() * 2);
+        if (isFill === 1) {
+            ele.style.backgroundColor = getColor();
+        }
+    })
+}
 
+/////////////////////////////////////////////////////////////////////////
 btnSmall.addEventListener("click", () => {
+    currentSize = 'SMALL';
     clearBoxes();
     createCanvas(size.small.numBoxes);
     changeCanvasSize(size.small.numBoxes, size.small.boxSide);
@@ -123,6 +134,7 @@ btnSmall.addEventListener("click", () => {
 })
 
 btnMedium.addEventListener("click", () => {
+    currentSize = 'MEDIUM';
     clearBoxes();
     createCanvas(size.medium.numBoxes);
     changeCanvasSize(size.medium.numBoxes, size.medium.boxSide);
@@ -130,6 +142,7 @@ btnMedium.addEventListener("click", () => {
 })
 
 btnLarge.addEventListener("click", () => {
+    currentSize = 'LARGE';
     clearBoxes();
     createCanvas(size.large.numBoxes);
     changeCanvasSize(size.large.numBoxes, size.large.boxSide)
@@ -154,4 +167,28 @@ btnRandomColor.addEventListener("click", () => {
 btnEraser.addEventListener("click", () => {
     currentStatus = 'ERASER';
     optionChanged();
+})
+
+btnDraw.addEventListener("click", () => {
+    currentStatus = 'DRAW';
+    switch (currentSize) {
+        case 'SMALL':
+            clearBoxes();
+            createCanvas(size.small.numBoxes);
+            changeCanvasSize(size.small.numBoxes, size.small.boxSide);
+            randomDraw();
+            break;
+        case 'MEDIUM':
+            clearBoxes();
+            createCanvas(size.medium.numBoxes);
+            changeCanvasSize(size.medium.numBoxes, size.medium.boxSide);
+            randomDraw();
+            break;
+        case 'LARGE':
+            clearBoxes();
+            createCanvas(size.large.numBoxes);
+            changeCanvasSize(size.large.numBoxes, size.large.boxSide)
+            randomDraw();
+            break;
+    }
 })
