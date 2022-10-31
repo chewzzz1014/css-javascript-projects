@@ -19,6 +19,6 @@
     border: 0.1px solid purple;
 }
 
-/* .grid-item:hover {
+/* .grid-item:hover::after {
     background-color: brown;
 } */

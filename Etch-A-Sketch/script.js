@@ -1,5 +1,5 @@
 const canvas = document.querySelector("#canvas");
-const boxes = document.querySelectorAll("#canvas > div");
+// const nodes = document.querySelectorAll(".grid-item");
 const btnClear = document.querySelector(".btn-clear");
 const btnEraser = document.querySelector(".btn-eraser");
 const btnRainbow = document.querySelector(".btn-rainbow");
@@ -25,11 +25,54 @@ const size = {
     },
 };
 
-createCanvas(size.medium.numBoxes);
-paint();
+startGame();
+function startGame() {
+    createCanvas(size.medium.numBoxes);
+    addNodesEvent();
+}
 
 
 
+function addNodesEvent() {
+    let nodes = document.querySelectorAll(".grid-item");
+
+    const addEvent = optionChanged;
+    addEvent(nodes);
+
+}
+
+function optionChanged() {
+    let nodes = document.querySelectorAll(".grid-item");
+
+    console.log(currentStatus);
+    if (currentStatus === 'RANDOM') {
+        Array.from(nodes).forEach((ele) => {
+            console.log("ok!")
+            ele.addEventListener("mouseover", (e) => {
+                e.target.style.backgroundColor = getColor();
+            })
+        })
+    } else if (currentStatus === 'RAINBOW') {
+        Array.from(nodes).forEach((ele) => {
+            console.log("ok rainbow!")
+            ele.addEventListener("mouseover", (e) => {
+                e.target.style.backgroundColor = getRainbowColor();
+                console.log(e.target.style.backgroundColor)
+            })
+        })
+    } else if (currentStatus === 'ERASER') {
+        Array.from(nodes).forEach((ele) => {
+            console.log("ok rainbow!")
+            ele.addEventListener("mouseover", (e) => {
+                e.target.style.backgroundColor = "transparent";
+            })
+        })
+    } else if (currentStatus === 'CLEAR') {
+        Array.from(nodes).forEach((ele) => {
+            ele.style.backgroundColor = "transparent";
+        })
+    }
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function changeCanvasSize(numBox, sizeSide) {
     canvas.style.gridTemplateRows = `repeat(${numBox}, ${sizeSide}px)`;
@@ -64,60 +107,51 @@ function getColor() {
     return "rgb(" + r + "," + g + "," + b + ")";
 }
 
-function paint() {
-    boxes.forEach((ele) => {
-        const selectedBox = ele;
-        selectedBox.addEventListener("mouseenter", (e) => {
-            if (currentStatus === 'RANDOM') {
-                alert("yayy")
-                e.target.style.backgroundColor = getColor();
-                e.target.style.opacity = 1;
-            } else if (currentStatus === 'RAINBOW') {
-
-            } else if (currentStatus === 'CLEAR') {
-
-            } else if (currentStatus === 'ERASER') {
-
-            }
-        })
-    })
+function getRainbowColor() {
+    const colors = [
+        "red", "orange", "yellow", "green", "blue", "violet", "purple"
+    ];
+    return colors[Math.floor(Math.random() * 7)];
 }
 
 
 btnSmall.addEventListener("click", () => {
     clearBoxes();
     createCanvas(size.small.numBoxes);
-    changeCanvasSize(size.small.numBoxes, size.small.boxSide)
+    changeCanvasSize(size.small.numBoxes, size.small.boxSide);
+    addNodesEvent();
 })
 
 btnMedium.addEventListener("click", () => {
     clearBoxes();
     createCanvas(size.medium.numBoxes);
-    changeCanvasSize(size.medium.numBoxes, size.medium.boxSide)
+    changeCanvasSize(size.medium.numBoxes, size.medium.boxSide);
+    addNodesEvent();
 })
 
 btnLarge.addEventListener("click", () => {
     clearBoxes();
     createCanvas(size.large.numBoxes);
     changeCanvasSize(size.large.numBoxes, size.large.boxSide)
+    addNodesEvent();
 })
 
 btnClear.addEventListener("click", () => {
-    alert("clear")
     currentStatus = "CLEAR";
+    optionChanged();
 })
 
 btnRainbow.addEventListener("click", () => {
-    alert("rainbow")
     currentStatus = "RAINBOW";
+    optionChanged();
 })
 
 btnRandomColor.addEventListener("click", () => {
-    alert("random")
     currentStatus = "RANDOM";
+    optionChanged();
 })
 
 btnEraser.addEventListener("click", () => {
-    alert("eraser")
     currentStatus = 'ERASER';
+    optionChanged();
 })
