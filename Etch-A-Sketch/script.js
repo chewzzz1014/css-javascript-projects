@@ -25,19 +25,13 @@ const size = {
     },
 };
 
-startGame();
-function startGame() {
-    createCanvas(size.medium.numBoxes);
-    addNodesEvent();
-}
-
+createCanvas(size.medium.numBoxes);
+const nodes = addNodesEvent();
 
 
 function addNodesEvent() {
-    let nodes = document.querySelectorAll(".grid-item");
-
     const addEvent = optionChanged;
-    addEvent(nodes);
+    return addEvent();
 }
 
 function optionChanged() {
@@ -46,14 +40,12 @@ function optionChanged() {
     console.log(currentStatus);
     if (currentStatus === 'RANDOM') {
         Array.from(nodes).forEach((ele) => {
-            console.log("ok!")
             ele.addEventListener("mouseover", (e) => {
                 e.target.style.backgroundColor = getColor();
             })
         })
     } else if (currentStatus === 'RAINBOW') {
         Array.from(nodes).forEach((ele) => {
-            console.log("ok rainbow!")
             ele.addEventListener("mouseover", (e) => {
                 e.target.style.backgroundColor = getRainbowColor();
                 console.log(e.target.style.backgroundColor)
@@ -61,7 +53,6 @@ function optionChanged() {
         })
     } else if (currentStatus === 'ERASER') {
         Array.from(nodes).forEach((ele) => {
-            console.log("ok rainbow!")
             ele.addEventListener("mouseover", (e) => {
                 e.target.style.backgroundColor = "transparent";
             })
@@ -71,6 +62,7 @@ function optionChanged() {
             ele.style.backgroundColor = "transparent";
         })
     }
+    return nodes;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function changeCanvasSize(numBox, sizeSide) {
