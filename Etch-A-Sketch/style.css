@@ -19,6 +19,14 @@
     border: 0.1px solid purple;
 }
 
-/* .grid-item:hover::after {
-    background-color: brown;
-} */
+.footer-cls {
+    background-color: aquamarine;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
