@@ -1,6 +1,22 @@
+body {
+    background-color: #ffc107;
+}
+
+h1 {
+    font-size: 4em;
+}
+
 .red-border {
     border: 0.1px solid red;
     margin: 0;
+}
+
+.white-box {
+    background-color: white;
+}
+
+.gray-box {
+    background-color: #ADFFDC
 }
 
 #canvas {
@@ -16,15 +32,22 @@
 }
 
 .grid-item {
-    border: 0.1px solid purple;
+    border: 0.1px solid black;
+}
+
+.black-border {
+    padding: 2em;
+    border-radius: 5px;
+    border: 3px solid black;
 }
 
 .footer-cls {
-    background-color: aquamarine;
+    margin: auto;
 }
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:hover {
