@@ -28,12 +28,12 @@ btnStart.addEventListener("click", () => {
     });
 
     quoteElement.innerHTML = spanWords.join(" ");
-    quoteElement.childNodes.className = 'highlight';
+    quoteElement.childNodes[0].className = 'highlight';
     msgElement.innerText = '';
 
     typedValueElement.value = '';
     typedValueElement.focus();
-    startTime - new Date().getTime();
+    startTime = new Date().getTime();
 })
 
 typedValueElement.addEventListener("input", () => {
@@ -48,7 +48,7 @@ typedValueElement.addEventListener("input", () => {
     else if (typedValue.endsWith(" ") && typedValue.trim() === currentWord) {
         typedValueElement.value = '';
         wordIndex++;
-        for (const wordElement of quoteElement.childNodes) { wordElement.className = ""; }
+        for (let wordElement of quoteElement.childNodes) { wordElement.className = ""; }
 
         quoteElement.childNodes[wordIndex].className = 'highlight';
     } else if (currentWord.startsWith(typedValue)) {
