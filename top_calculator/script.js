@@ -6,7 +6,7 @@ const displayField = document.querySelector(".display");
 const operators = ["+", "-", "*", "/", '=']
 const calculatorOp = ["CLEAR", "DELETE"]
 let currentInput = '';
-let currentOperation = [];
+let currentOperationCount = 0, currentOperation = '';
 
 btnNums.forEach((ele, idx) => {
     ele.addEventListener("click", (e) => {
@@ -17,22 +17,16 @@ btnNums.forEach((ele, idx) => {
 
 btnUtils.forEach((ele, idx) => {
     ele.addEventListener("click", (e) => {
-        if (operators[idx] !== '=') {
-            if (ongoingOperaton === 0) {
-                currentOperation.push(operators[idx]);
-                currentInput += operators[idx];
-            } else if (ongoingOperaton > 0) {
-                const operands = currentInput.split(currentOperation);
-                currentInput = calculate(operands[0], operands[1], currentOperation);
-                currentOperation = [];
-                display(currentInput);
-            }
+        if (operators[idx] !== '=' && currentOperationCount === 0 && (currentInput.length > 0)) {
+            currentOperationCount++;
+            currentOperation = operators[idx];
+            currentInput += operators[idx];
+            display(currentInput)
         }
-        else {
-            const operands = currentInput.split(currentOperation);
-            currentInput = calculate(operands[0], operands[1], currentOperation);
+        else if (operators[idx] === '=') {
+            currentInput = "" + calculate(currentInput, currentOperation);
+            currentOperationCount = 0;
             currentOperation = '';
-            ongoingOperaton = 0;
             display(currentInput);
         }
     })
@@ -48,9 +42,11 @@ btnOp.forEach((ele, idx) => {
 })
 
 ////////////////////////////////////////////////////////////////////
-function calculate(n1, n2, op) {
-    n1 = parseInt(n1);
-    n2 = parseInt(n2);
+
+function calculate(s, op) {
+    let n = s.split(op);
+    n1 = parseFloat(n[0]);
+    n2 = parseFloat(n[1]);
 
     switch (op) {
         case '+':
@@ -66,13 +62,20 @@ function calculate(n1, n2, op) {
 
 function clearInput() {
     currentInput = '';
-    currentOperation = [];
+    currentOperation = 0;
     display(currentInput);
 }
 
 function deleteInput() {
-    currentInput = currentInput.slice(0, currentInput.length - 1);
-    display(currentInput);
+    if (currentInput.length > 0) {
+        let last = currentInput[currentInput.length - 1];
+        if (typeof parseInt(last) !== 'number') {
+            currentOperationCount--;
+            console.log("yayy1 " + currentOperationCount)
+        }
+        currentInput = currentInput.slice(0, currentInput.length - 1);
+        display(currentInput);
+    }
 }
 
 function display(s) {
