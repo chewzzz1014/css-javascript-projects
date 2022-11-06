@@ -3,7 +3,7 @@ const btnUtils = document.querySelectorAll(".utils");
 const btnOp = document.querySelectorAll(".op");
 const displayField = document.querySelector(".display");
 
-const operators = ["+", "-", "*", "/", '=']
+const operators = ['=', "+", "-", "*", "/"]
 const calculatorOp = ["CLEAR", "DELETE"]
 let currentInput = '';
 let currentOperationCount = 0, currentOperation = '';

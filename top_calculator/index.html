@@ -14,23 +14,42 @@
 <body>
     <div class="container">
         <h1 class="display">Your input</h1>
-        <button class="num" id="btn-0">0</button>
-        <button class="num" id="btn-1">1</button>
-        <button class="num" id="btn-2">2</button>
-        <button class="num" id="btn-3">3</button>
-        <button class="num" id="btn-4">4</button>
-        <button class="num" id="btn-5">5</button>
-        <button class="num" id="btn-6">6</button>
-        <button class="num" id="btn-7">7</button>
-        <button class="num" id="btn-8">8</button>
-        <button class="num" id="btn-9">9</button>
-        <button class='utils' id="btn-add">+</button>
-        <button class='utils' id="btn-sub">-</button>
-        <button class='utils' id="btn-mul">*</button>
-        <button class='utils' id="btn-div">/</button>
-        <button class='utils' id="btn-eq">=</button>
-        <button class='op' id="btn-clear">Clear</button>
-        <button class='op' id="btn-delete">Delete</button>
+        <div class="row">
+            <button class='op col-4 btn btn-info' id="btn-clear" value="CLEAR">Clear</button>
+            <button class='op col-4 btn btn-info' id="btn-delete" value="DELETE">Delete</button>
+            <button class='utils btn btn-info col-4' id="btn-eq" value="=">=</button>
+        </div>
+
+        <div class="row">
+            <button class="num btn btn-info col-4" id="btn-0" value="0">0</button>
+            <button class="num btn btn-info col-4" id="btn-1" value="1">1</button>
+            <button class="num btn btn-info col-4" id="btn-2" value="2">2</button>
+        </div>
+
+        <div class="row">
+            <button class="num btn btn-info col-4" id="btn-3" value="3">3</button>
+            <button class="num btn btn-info col-4" id="btn-4" value="4">4</button>
+            <button class="num btn btn-info col-4" id="btn-5" value="5">5</button>
+        </div>
+
+        <div class="row">
+            <button class="num btn btn-info col-4" id="btn-6" value="6">6</button>
+            <button class="num btn btn-info col-4" id="btn-7" value="7">7</button>
+            <button class="num btn btn-info col-4" id="btn-8" value="8">8</button>
+        </div>
+
+        <div class="row">
+            <button class="num btn btn-info col-4" id="btn-9" value="9">9</button>
+            <button class='utils btn btn-info col-4' id="btn-add" value="+">+</button>
+            <button class='utils btn btn-info col-4' id="btn-sub" value="-">-</button>
+        </div>
+
+        <div class="row">
+            <button class='utils btn btn-info col-6' id="btn-mul" value="*">*</button>
+            <button class='utils btn btn-info col-6' id="btn-div" value="/">/</button>
+        </div>
+
+
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
