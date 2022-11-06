@@ -50,6 +50,9 @@ function calculate(s, op) {
     n1 = parseFloat(n[0]);
     n2 = parseFloat(n[1]);
 
+    if (!n2)
+        return n1;
+
     switch (op) {
         case '+':
             return n1 + n2;
