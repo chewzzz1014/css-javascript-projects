@@ -3,27 +3,29 @@ const btnUtils = document.querySelectorAll(".utils");
 const btnOp = document.querySelectorAll(".op");
 const displayField = document.querySelector(".display");
 
-const operators = ['=', "+", "-", "*", "/"]
-const calculatorOp = ["CLEAR", "DELETE"]
 let currentInput = '';
 let currentOperationCount = 0, currentOperation = '';
 
-btnNums.forEach((ele, idx) => {
+btnNums.forEach((ele) => {
     ele.addEventListener("click", (e) => {
-        currentInput += idx;
+        currentInput += e.target.value;
         display(currentInput);
     })
 })
 
-btnUtils.forEach((ele, idx) => {
+btnUtils.forEach((ele) => {
     ele.addEventListener("click", (e) => {
-        if (operators[idx] !== '=' && currentOperationCount === 0 && (currentInput.length > 0)) {
-            currentOperationCount++;
-            currentOperation = operators[idx];
-            currentInput += operators[idx];
+        if (e.target.value === '.') {
+            currentInput += e.target.value;
             display(currentInput)
         }
-        else if (operators[idx] === '=') {
+        else if (e.target.value !== '=' && currentOperationCount === 0 && (currentInput.length > 0)) {
+            currentOperationCount++;
+            currentOperation = e.target.value;
+            currentInput += e.target.value;
+            display(currentInput)
+        }
+        else if (e.target.value === '=') {
             currentInput = "" + calculate(currentInput, currentOperation);
             currentOperationCount = 0;
             currentOperation = '';
@@ -32,11 +34,11 @@ btnUtils.forEach((ele, idx) => {
     })
 })
 
-btnOp.forEach((ele, idx) => {
+btnOp.forEach((ele) => {
     ele.addEventListener("click", (e) => {
-        if (idx === 0)
+        if (e.target.value === 'CLEAR')
             clearInput();
-        else if (idx === 1)
+        else if (e.target.value === 'DELETE')
             deleteInput();
     })
 })
