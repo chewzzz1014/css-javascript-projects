@@ -1,5 +1,5 @@
 body {
-    background-color: antiquewhite;
+    background-color: #FFFBC1;
 }
 
 .display {
@@ -10,6 +10,11 @@ body {
     background-color: white;
 }
 
-button {
-    border: 1px solid black;
+.btn {
+    background-color: #B6E2A1;
+    color: black;
+}
+
+.op {
+    background-color: #F7A4A4;
 }
