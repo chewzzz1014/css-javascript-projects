@@ -12,9 +12,12 @@ button.addEventListener("click", function () {
 });
 
 clear.addEventListener("click", function () {
-    h1.textContent = "Welcome";
     document.body.style = "none";
     result.innerHTML = "";
+
+    h1.classList.remove("text-white")
+    h1.classList.add("text-dark")
+    h1.textContent = "Random Color Generator";
 });
 
 
