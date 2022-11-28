@@ -1,79 +1,24 @@
 # Introduction
-- Collection of projects built using HTML, CSS, Javascript DOM and Events as well as some simple bootstrap.
+- Collection of projects built using HTML, CSS, Javascript DOM and bootstrap.
 - Landing page of all projects to be added soon...
 
 
-# Projects Overview
+# Projects Live Site
+- [Etch-A-Sketch]
+- [boostrap_form](https://chewzzz-boostrap-form.netlify.app/)
+- [color_generator](https://chewzzz-color-generator.netlify.app/)
+- [counter](https://chewzzz-counter.netlify.app/)
+- [form_events](https://chewzzz-form-events.netlify.app/)
+- [jokes_api]
+- [museum_of_candy](https://chewzzz-museum-of-candy.netlify.app/)
+- [photosite]
+- [pokemon_icon]
+- [pricing_panel](https://chewzzz-pricing-panel.netlify.app/)
+- [rock_paper_scissors]
+- [score_keeper]
+- [top_calculator]
+- [top_landing_page]
+- [top-recipe]
+- [tvShow_api]
+- [typing_game]
 
-1. bootstrap_form
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - Built a simple responsive bootstrap form using bootstrap.
-
-2. color_generator
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - Generate random color card where text color is dependant on color generated (white text for dark color and vice verse).
-
-3. counter
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - A simple counter that's able to increase, decrease number, save the number and clear all numbers saved.
-
-4. form_event
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - Post tweet based on what user inputted.
-
-4. jokes_api
-   - Display jokes fetched using API.
-
-5. museum_of_candy
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - Asthetic responsive website. 
-   - Code along project.
-
-6. photosite
-   - :white_check_mark: Responsive
-   - Responsive photo viewer built using CSS flex box.
-   - Code Along Project.
-
-7. pokemon_icon
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - Adding 100 pokemon icons using Javascript DOM.
-
-8. pricing_panel
-   - :white_check_mark: Bootstrap
-   - :white_check_mark: Responsive
-   - A responsive pricing panel clones.
-   - Follow-along project.
-
-9. real_time_update
-   - Real time update the h1 text's content with input user have enterred
-
-
-10. rock_paper_scissors (Incomplete)
-    - :x: Responsive
-    - Created a simple Rock Paper Scissors game using JavaScript.
-
-11. score_keeper
-    - :white_check_mark: Bulma Framework
-    - :white_check_mark: Responsive
-    - Create a interactive scoreboard to keep track of players' scores.
-    - Code along project
-
-12. top_landing_page
-    - :x: Responsive
-    - Use flex properties and simple CSS techniques to build a landing page which includes several sections as well as a header and a footer.
-    - One of the assignments in [theodinproject](https://www.theodinproject.com/lessons/foundations-landing-page)'s Web Development learning path.
-
-
-13. top_recipe
-    - :x: Responsive
-    - Solution of [task](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/recipes) in [HTML Foundations](https://www.theodinproject.com/paths/foundations/courses/foundations#html-foundations) under [Web Development Courses](https://www.theodinproject.com/paths/foundations/courses/foundations) provided by [The Odin Project](https://www.theodinproject.com/). A recipe website is built using basic HTML and CSS skills.
-
-
-14. tv_Show_api
-    - Get tv show's poster based on what user have submitted using form.
