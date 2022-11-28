@@ -1,5 +1,5 @@
 # Introduction
-- Collection of projects built using HTML, CSS, Javascript DOM and bootstrap.
+- Collection of projects built using HTML, CSS, Javascript DOM and Bootstrap.
 - Landing page of all projects to be added soon...
 
 
