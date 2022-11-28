@@ -4,7 +4,7 @@
 
 
 # Projects Live Site
-- [Etch-A-Sketch]
+- [Etch-A-Sketch](https://chewzzz-etch-a-sketch.netlify.app/)
 - [boostrap_form](https://chewzzz-boostrap-form.netlify.app/)
 - [color_generator](https://chewzzz-color-generator.netlify.app/)
 - [counter](https://chewzzz-counter.netlify.app/)
