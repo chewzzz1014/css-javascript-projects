@@ -1,6 +1,6 @@
 # Introduction
 - Collection of projects built using HTML, CSS, Javascript DOM and Bootstrap.
-- Landing page of all projects to be added soon...
+- Details of all projects available [here](https://chewzzz1014.github.io/portfolio-website-projects-page/)
 
 
 # Projects Live Site
