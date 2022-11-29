@@ -12,13 +12,13 @@
 - [jokes_api]
 - [museum_of_candy](https://chewzzz-museum-of-candy.netlify.app/)
 - [photosite]
-- [pokemon_icon]
+- [pokemon_icon](https://chewzzz-pokemon-icon.netlify.app/)
 - [pricing_panel](https://chewzzz-pricing-panel.netlify.app/)
-- [rock_paper_scissors]
-- [score_keeper]
-- [top_calculator]
-- [top_landing_page]
-- [top-recipe]
-- [tvShow_api]
-- [typing_game]
+- [rock_paper_scissors](https://chewzzz-rock-paper-scissors.netlify.app/)
+- [score_keeper](https://chewzzz-score-keeper.netlify.app/)
+- [top_calculator](https://chewzzz-top-calculator.netlify.app/)
+- [top_landing_page]()
+- [top_recipe](https://chewzzz-top-recipe.netlify.app/)
+- [tvShow_api](https://chewzzz-tvshow-api.netlify.app/)
+- [typing_game](https://chewzzz-typing-game.netlify.app/)
 
