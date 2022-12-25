@@ -3,3 +3,11 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+.card {
+    @apply bg-white rounded overflow-hidden shadow-lg relative
+}
+
+.badge {
+    @apply bg-violet-200 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2
+}
