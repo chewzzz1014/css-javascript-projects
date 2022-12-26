@@ -5,7 +5,7 @@
 @import "tailwindcss/utilities";
 
 .card {
-    @apply bg-white rounded overflow-hidden shadow-lg relative
+    @apply bg-white rounded overflow-hidden shadow-md relative
 }
 
 .badge {
