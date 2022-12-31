@@ -42,30 +42,31 @@ function generateComputerChoice() {
   return Math.floor(Math.random() * 3);
 }
 
-function playGame(playerChoice, computerChoice = generateComputerChoice()) {
+function playGame(playerChoice) {
 
   // console.log(`Computer choice: ${computerChoice}`)
+  let computerChoice = generateComputerChoice()
 
   if (!isGameOver) {
     console.log(attempt)
     // draw
     if (playerChoice == computerChoice) {
       attempt++;
-      addTableColumn("Draw");
+      addTableColumn("Draw", playerChoice, computerChoice);
     }
     // player wins
     else if ((playerChoice == 0 && computerChoice == 2) || (playerChoice == 1 && computerChoice == 0) || (playerChoice == 2 && computerChoice == 1)) {
       scores.player += 1;
       attempt++;
       updateScoreDisplay();
-      addTableColumn("Player Wins");
+      addTableColumn("Player Wins", playerChoice, computerChoice);
     }
     // computer wins
     else {
       scores.computer += 1;
       attempt++;
       updateScoreDisplay();
-      addTableColumn("Computer Wins");
+      addTableColumn("Computer Wins", playerChoice, computerChoice);
     }
     checkIsGameOver();
   }
@@ -93,17 +94,22 @@ function isLastRound() {
   return false;
 }
 
-function addTableColumn(result) {
+function addTableColumn(result, playerChoice, computerChoice) {
   const tr = document.createElement("TR");
   const th = document.createElement("TD");
   const td1 = document.createElement("TD");
   const td2 = document.createElement("TD");
   const td3 = document.createElement("TD");
+  const td4 = document.createElement("TD");
+  const td5 = document.createElement("TD");
 
   th.textContent = attempt;
-  td1.textContent = scores.player;
-  td2.textContent = scores.computer;
+  td1.textContent = Object.keys(choices[playerChoice])
+  td2.textContent = Object.keys(choices[computerChoice])
   td3.textContent = result;
+  td4.textContent = scores.player;
+  td5.textContent = scores.computer;
+
 
   if (isLastRound()) {
     tr.classList.add("table-danger");
@@ -113,6 +119,8 @@ function addTableColumn(result) {
   tr.insertAdjacentElement("beforeend", td1);
   tr.insertAdjacentElement("beforeend", td2);
   tr.insertAdjacentElement("beforeend", td3);
+  tr.insertAdjacentElement("beforeend", td4);
+  tr.insertAdjacentElement("beforeend", td5);
   table.insertAdjacentElement("beforeend", tr);
 }
 
