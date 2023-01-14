@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -513,15 +513,59 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.border {
+  border-width: 1px;
 }
 
-.font-bold {
-  font-weight: 700;
+.bg-body-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(45 46 54 / var(--tw-bg-opacity));
 }
 
-.underline {
-  text-decoration-line: underline;
+.text-desc-text-gray {
+  --tw-text-opacity: 1;
+  color: rgb(141 145 166 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @media (min-width: 640px) {
+    .md\:container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .md\:container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .md\:container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .md\:container {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .md\:container {
+      max-width: 1536px;
+    }
+  }
+
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
