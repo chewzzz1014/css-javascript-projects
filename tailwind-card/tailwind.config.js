@@ -8,7 +8,8 @@ module.exports = {
     },
     colors: {
       'body-gray': '#2D2E36',
-      'desc-text-gray': '#8D91A6'
+      'desc-text-gray': '#8D91A6',
+      'card-gray': '#383A45'
     }
   },
   plugins: [],
