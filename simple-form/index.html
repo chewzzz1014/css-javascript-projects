@@ -8,29 +8,44 @@
 </head>
 
 <body>
-    <div class="w-screen h-screen bg-black">
+    <div class="w-screen h-screen">
         <div class="w-screen h-screen flex flex-col md:flex-row">
-            <div class="bg-red-500 flex-1">
-                <h1>GOT MARKETING? ADVANCE YOUR BUSINESS INSIGHT</h1>
-                <p>Fill out the form and receive our award winning news letter</p>
+            <div
+                class="bg-red-500 flex-1 bg-main-img bg-blend-darken flex flex-col justify-center items-center px-5 md:px-10 text-center">
+                <h1 class="text-white text-5xl font-bold md:mb-10">GOT MARKETING? ADVANCE YOUR BUSINESS INSIGHT</h1>
+                <p class="text-white text-lg font-medium">Fill out the form and receive our award winning news letter
+                </p>
             </div>
-            <div class="bg-purple-500 flex-1">
-                <form class="">
-                    <div>
-                        <label for="name-inout">Name</label>
-                        <input type="text" name="name" id="name-input">
+            <form class="flex-1 flex flex-col justify-center items-center px-10">
+                <!-- <div class="flex-1 border border-black"> -->
+                <div class="w-full flex flex-col mb-5">
+                    <div class="w-full flex">
+                        <label for="name-input" class="font-semibold mb-3">Name</label>
                     </div>
+                    <div class="w-full flex">
+                        <input type="text" name="name" id="name-input"
+                            class="border border-[#C7C7C7] bg-[#EDEDED] w-full h-10">
+                    </div>
+                </div>
 
-                    <div>
-                        <label for="email-input">Email</label>
-                        <input type="text" name="email" id="email-input">
+                <div class="w-full flex flex-col mb-5">
+                    <div class="w-full flex">
+                        <label for="email-input" class="font-semibold mb-3">Email</label>
                     </div>
+                    <div class="w-full flex">
+                        <input type="text" name="email" id="email-input"
+                            class="border border-[#C7C7C7] bg-[#EDEDED] w-full h-10">
+                    </div>
+                </div>
 
-                    <div>
-                        <button type="submit">Sign me up</button>
+                <div class="w-full">
+                    <div class="w-full">
+                        <button type="submit" class="bg-[#5200FF] py-2 font-semibold text-white w-1/2 rounded">Sign me
+                            up</button>
                     </div>
-                </form>
-            </div>
+                </div>
+                <!-- </div> -->
+            </form>
         </div>
     </div>
 </body>
